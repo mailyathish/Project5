@@ -49,7 +49,8 @@ stage('Integration Test ') {
  stage('Docker Build and Tag') {
            steps {
               
-                sh 'docker build -t rajuyathi/calculator:latest .' 
+                 sh 'docker ps'
+                //sh 'docker build -t rajuyathi/calculator:latest .' 
                 
                
           }
