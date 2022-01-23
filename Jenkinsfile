@@ -38,6 +38,46 @@ stage('Integration Test ') {
    }
  }
 
+  stage('Execute Maven') {
+           steps {
+             
+                sh 'mvn package'             
+          }
+        }
+
+
+ stage('Docker Build and Tag') {
+           steps {
+              
+                sh 'docker build -t rajuyathi/calculator:latest .' 
+                
+               
+          }
+        }
+
+   
+   
+   stage('Push Docker Image'){
+	steps {
+	
+	withCredentials([string(credentialsId: 'DockerPWD', variable: 'DockerPass')]) {
+    	// some block
+
+	sh 'docker login -u rajuyathi -p ${DockerPass}'
+
+	
+	 // some block
+	sh 'docker push rajuyathi/calculator:latest'
+	}
+	}
+
+	}
+
+
+
+
+
+
 }
 }
 
