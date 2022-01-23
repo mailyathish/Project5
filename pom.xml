@@ -95,15 +95,15 @@
                 <version>3.2.2</version>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.7</version>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.6.201602180812</version>
                 <executions>
                     <execution>
-                        <id>cobertura</id>
+                        <id>jacoco</id>
                         <phase>test</phase>
                         <goals>
-                            <goal>cobertura</goal>
+                            <goal>jacoco</goal>
                         </goals>
                         <configuration>
                             <formats>
