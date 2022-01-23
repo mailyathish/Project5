@@ -49,8 +49,8 @@ stage('Integration Test ') {
  stage('Docker Build and Tag') {
            steps {
               
-                 sh '/Applications/Docker.app/Contents/Resources/bin/docker ps'
-                //sh 'docker build -t rajuyathi/calculator:latest .' 
+               
+                sh '/Applications/Docker.app/Contents/Resources/bin/docker build -t rajuyathi/calculator:latest .' 
                 
                
           }
@@ -64,11 +64,11 @@ stage('Integration Test ') {
 	withCredentials([string(credentialsId: 'DockerPWD', variable: 'DockerPass')]) {
     	// some block
 
-	sh 'docker login -u rajuyathi -p ${DockerPass}'
+	sh '/Applications/Docker.app/Contents/Resources/bin/docker login -u rajuyathi -p ${DockerPass}'
 
 	
 	 // some block
-	sh 'docker push rajuyathi/calculator:latest'
+	sh '/Applications/Docker.app/Contents/Resources/bin/docker push rajuyathi/calculator:latest'
 	}
 	}
 
