@@ -37,7 +37,7 @@ stage('Integration Test ') {
       
    }
  }
-
+*/
   stage('Execute Maven') {
            steps {
              
@@ -45,7 +45,6 @@ stage('Integration Test ') {
           }
         }
 
-*/
  stage('Docker Build and Tag') {
            steps {
               
