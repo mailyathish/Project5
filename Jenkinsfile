@@ -31,6 +31,12 @@ stage('Integration Test ') {
    }
  }
 
+ stage('Performance Test') {
+      steps {
+         sh 'mvn verify'
+      
+   }
+ }
 
 }
 }
