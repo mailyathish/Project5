@@ -1,3 +1,46 @@
+pipeline {
+    agent any
+	
+	  tools
+    {
+       maven "Maven"
+    }
+
+ stages {
+      stage('checkout') {
+           steps {
+             
+                git branch: 'main', url: 'https://github.com/mailyathish/Project5.git'
+             
+          }
+        }
+
+stage('JUnit Test') {
+   steps {
+      if (isUnix()) {
+         sh 'mvn clean test' 
+      }
+   }
+ }
+
+stage('Integration Test ') {
+   steps {
+      if (isUnix()) {
+         sh 'mvn integration-test' 
+      }
+   }
+ }
+
+
+}
+}
+
+
+
+
+
+
+/*
 node {
    def mvnHome = tool 'M3'
 
@@ -26,7 +69,7 @@ node {
          bat(/"${mvnHome}\bin\mvn" cargo:start verify cargo:stop/)
       }
    }
-  */
+  
   stage('Performance Test') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' verify"
@@ -41,4 +84,4 @@ node {
       echo 'Deploy...'
    }
 }
-   
+   */
