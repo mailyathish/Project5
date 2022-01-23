@@ -17,17 +17,17 @@ pipeline {
 
 stage('JUnit Test') {
    steps {
-      if (isUnix()) {
+      
          sh 'mvn clean test' 
-      }
+      
    }
  }
 
 stage('Integration Test ') {
    steps {
-      if (isUnix()) {
+      
          sh 'mvn integration-test' 
-      }
+      
    }
  }
 
