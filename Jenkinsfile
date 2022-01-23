@@ -15,7 +15,7 @@ pipeline {
           }
         }
 
-stage('JUnit Test') {
+/* stage('JUnit Test') {
    steps {
       
          sh 'mvn clean test' 
@@ -45,7 +45,7 @@ stage('Integration Test ') {
           }
         }
 
-
+*/
  stage('Docker Build and Tag') {
            steps {
               
