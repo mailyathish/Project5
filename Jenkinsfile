@@ -63,7 +63,7 @@ stage('Integration Test ') {
 	withCredentials([string(credentialsId: 'DockerPWDS', variable: 'DockerPass')]) {
     	// some block
 
-	//sh 'docker login -u rajuyathi -p ${DockerPass}'
+	sh '/Applications/Docker.app/Contents/Resources/bin/docker login -u rajuyathi -p ${DockerPass}'
 
 	
 	 // some block
