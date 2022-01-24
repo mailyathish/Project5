@@ -49,7 +49,7 @@ stage('Integration Test ') {
            steps {
               
                
-                sh 'docker build -t rajuyathi/calculator:latest .' 
+                sh '/Applications/Docker.app/Contents/Resources/bin/docker build -t rajuyathi/calculator:latest .' 
                 
                
           }
