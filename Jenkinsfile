@@ -15,7 +15,7 @@ pipeline {
           }
         }
 
-/* stage('JUnit Test') {
+stage('JUnit Test') {
    steps {
       
          sh 'mvn clean test' 
@@ -37,7 +37,7 @@ stage('Integration Test ') {
       
    }
  }
-*/
+
   stage('Execute Maven') {
            steps {
              
@@ -56,11 +56,11 @@ stage('Integration Test ') {
         }
 
    
-   
+   /*
    stage('Push Docker Image'){
 	steps {
 	
-	withCredentials([string(credentialsId: 'DockerPWD', variable: 'DockerPass')]) {
+	withCredentials([string(credentialsId: 'DockerPWDS', variable: 'DockerPass')]) {
     	// some block
 
 	sh 'docker login -u rajuyathi -p ${DockerPass}'
@@ -69,6 +69,8 @@ stage('Integration Test ') {
 	 // some block
 	sh 'docker push rajuyathi/calculator:latest'
 	}
+   }
+   */
 	}
 
 	}
