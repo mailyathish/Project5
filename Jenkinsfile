@@ -30,14 +30,14 @@ stage('Integration Test ') {
       
    }
  }
-
+/*
  stage('Performance Test') {
       steps {
          sh 'mvn -X verify'
       
    }
  }
-
+*/
   stage('Execute Maven') {
            steps {
              
